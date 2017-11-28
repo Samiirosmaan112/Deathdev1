@@ -140,7 +140,7 @@ client.on("message", (message) => {
 
     // This command must be limited to mods and admins. In this example we just hardcode the role names.
 
-    if(!message.member.roles.some(r=>["Administrator", "Moderator", "Admin"].includes(r.name)) )
+if (!message.member.hasPermission('MANAGE_MESSAGES'))
       return ;
     
     // get the delete count, as an actual number.
